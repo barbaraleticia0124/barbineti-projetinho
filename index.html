@@ -3,205 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CineMatch</title>
+    <meta name="description" content="CineMatch: descubra o que assistir de acordo com seu momento.">
+    <title>CineMatch — Sua próxima história</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <header class="header">
+        <a class="brand" href="#inicio" aria-label="CineMatch, início">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>Cine<span class="brand-accent">Match</span></span>
+        </a>
 
-    <header>
-        <div class="logo">
-            <span>🎬</span> Cine<span>Match</span>
-        </div>
-
-        <nav>
+        <nav class="nav" aria-label="Navegação principal">
             <a href="#inicio">Início</a>
             <a href="#descobrir">Descobrir</a>
             <a href="#sobre">Sobre</a>
         </nav>
+
+        <a class="header-cta" href="#descobrir">Começar <span aria-hidden="true">↗</span></a>
     </header>
 
     <main>
-
-        <!-- HERO -->
         <section class="hero" id="inicio">
-
-            <div class="hero-text">
-                <p class="tag">SEU PRÓXIMO FAVORITO ESTÁ AQUI</p>
-
-                <h1>
-                    Não sabe o que
-                    <strong>assistir?</strong>
-                </h1>
-
-                <p class="subtitle">
-                    Escolha o que você está procurando e deixe o CineMatch
-                    encontrar uma produção perfeita para o seu momento.
-                </p>
-
-                <button class="main-button" onclick="irParaDescobrir()">
-                    Descobrir agora →
+            <div class="hero-copy">
+                <p class="eyebrow"><span></span> RECOMENDAÇÕES PARA O SEU MOMENTO</p>
+                <h1>O próximo filme da sua vida <em>está aqui.</em></h1>
+                <p class="hero-lead">Pare de passar horas procurando. Conte o que você quer assistir e receba uma indicação escolhida para combinar com o seu humor.</p>
+                <button class="primary-button" id="startButton" type="button">
+                    Encontrar uma indicação <span aria-hidden="true">→</span>
                 </button>
+                <div class="hero-note"><span class="note-dot"></span> Sem cadastro · gratuito · feito para você</div>
             </div>
 
-            <div class="hero-card">
-                <div class="poster">
-                    <div class="poster-content">
-                        <span>⭐ 9.2</span>
-                        <h2>Uma nova<br>história<br>espera por você.</h2>
+            <div class="hero-art" aria-label="Composição visual com cartazes de cinema">
+                <div class="art-glow"></div>
+                <div class="floating-card card-back card-back-one"></div>
+                <div class="floating-card card-back card-back-two"></div>
+                <div class="feature-card">
+                    <div class="feature-card-top"><span>EM DESTAQUE</span><span>★ 9.2</span></div>
+                    <div class="feature-card-content">
+                        <span class="feature-kicker">UMA NOVA</span>
+                        <strong>história<br>espera<br>por você.</strong>
                     </div>
+                    <div class="feature-card-bottom"><span>cinematch</span><span>2026</span></div>
                 </div>
             </div>
-
         </section>
 
-
-        <!-- DESCOBRIR -->
-        <section class="discover" id="descobrir">
-
-            <div class="section-title">
-                <p class="tag">CINEMATCH</p>
-                <h2>O que você quer assistir?</h2>
-                <p>Conte um pouco sobre o que está procurando.</p>
+        <section class="discover section-shell" id="descobrir" aria-labelledby="discoverTitle">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow"><span></span> VAMOS ENCONTRAR</p>
+                    <h2 id="discoverTitle">O que combina<br>com você hoje?</h2>
+                </div>
+                <p class="section-description">Escolha uma opção em cada etapa.<br>A sua próxima história está a poucos cliques.</p>
             </div>
 
-            <div class="selection-area">
-
-                <div class="question">
-                    <h3>01. Escolha o tipo</h3>
-
-                    <div class="options" id="tipoOptions">
-
-                        <button class="option active" data-type="filme">
-                            🎬
-                            <span>Filme</span>
-                        </button>
-
-                        <button class="option" data-type="serie">
-                            📺
-                            <span>Série</span>
-                        </button>
-
-                        <button class="option" data-type="programa">
-                            🎤
-                            <span>Programa</span>
-                        </button>
-
+            <div class="steps">
+                <article class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3>Qual formato?</h3>
+                        <p>Escolha como você quer assistir.</p>
+                        <div class="choice-grid" id="typeChoices" role="group" aria-label="Escolha o formato">
+                            <button class="choice-button is-selected" type="button" data-type="filme" aria-pressed="true">
+                                <span class="choice-icon" aria-hidden="true">▣</span><span>Filme</span>
+                            </button>
+                            <button class="choice-button" type="button" data-type="serie" aria-pressed="false">
+                                <span class="choice-icon" aria-hidden="true">▤</span><span>Série</span>
+                            </button>
+                            <button class="choice-button" type="button" data-type="programa" aria-pressed="false">
+                                <span class="choice-icon" aria-hidden="true">◉</span><span>Programa</span>
+                            </button>
+                        </div>
                     </div>
-                </div>
+                </article>
 
-
-                <div class="question">
-                    <h3>02. Escolha o gênero</h3>
-
-                    <div class="genres">
-
-                        <button class="genre" data-genre="ação">Ação</button>
-                        <button class="genre" data-genre="comédia">Comédia</button>
-                        <button class="genre" data-genre="romance">Romance</button>
-                        <button class="genre" data-genre="terror">Terror</button>
-                        <button class="genre" data-genre="aventura">Aventura</button>
-                        <button class="genre" data-genre="ficção científica">Ficção científica</button>
-                        <button class="genre" data-genre="drama">Drama</button>
-                        <button class="genre" data-genre="mistério">Mistério</button>
-                        <button class="genre" data-genre="fantasia">Fantasia</button>
-                        <button class="genre" data-genre="documentário">Documentário</button>
-
+                <article class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3>Qual é o clima?</h3>
+                        <p>Escolha o gênero que combina com o seu momento.</p>
+                        <div class="genre-grid" id="genreChoices" role="group" aria-label="Escolha o gênero">
+                            <button class="genre-button" type="button" data-genre="ação" aria-pressed="false">Ação</button>
+                            <button class="genre-button" type="button" data-genre="comédia" aria-pressed="false">Comédia</button>
+                            <button class="genre-button" type="button" data-genre="romance" aria-pressed="false">Romance</button>
+                            <button class="genre-button" type="button" data-genre="terror" aria-pressed="false">Terror</button>
+                            <button class="genre-button" type="button" data-genre="aventura" aria-pressed="false">Aventura</button>
+                            <button class="genre-button" type="button" data-genre="ficção científica" aria-pressed="false">Ficção científica</button>
+                            <button class="genre-button" type="button" data-genre="drama" aria-pressed="false">Drama</button>
+                            <button class="genre-button" type="button" data-genre="mistério" aria-pressed="false">Mistério</button>
+                            <button class="genre-button" type="button" data-genre="fantasia" aria-pressed="false">Fantasia</button>
+                            <button class="genre-button" type="button" data-genre="documentário" aria-pressed="false">Documentário</button>
+                        </div>
                     </div>
-                </div>
-
-
-                <button class="recommend-button" onclick="recomendar()">
-                    ✨ Encontrar minha indicação
-                </button>
-
+                </article>
             </div>
 
-        </section>
-
-
-        <!-- RESULTADO -->
-        <section class="result-section" id="resultado">
-
-            <div class="result-container">
-
-                <div class="result-poster" id="resultPoster">
-                    🎬
-                </div>
-
-                <div class="result-info">
-
-                    <span class="result-type" id="resultType">
-                        FILME
-                    </span>
-
-                    <h2 id="resultTitle">
-                        Sua indicação aparecerá aqui
-                    </h2>
-
-                    <div class="rating">
-                        ⭐ <span id="resultRating">0.0</span>
-                    </div>
-
-                    <div class="tags">
-                        <span id="resultGenre">Gênero</span>
-                        <span id="resultYear">2026</span>
-                    </div>
-
-                    <h3>Sobre essa produção</h3>
-
-                    <p id="resultDescription">
-                        Escolha suas preferências acima e descubra
-                        uma nova produção para assistir.
-                    </p>
-
-                    <div class="why">
-                        <strong>💡 Por que assistir?</strong>
-                        <p id="resultWhy">
-                            Sua recomendação personalizada aparecerá aqui.
-                        </p>
-                    </div>
-
-                    <button class="again-button" onclick="recomendar()">
-                        🔄 Quero outra indicação
-                    </button>
-
-                </div>
-
+            <div class="action-row">
+                <p class="selection-status" id="selectionStatus" aria-live="polite">Escolha um gênero para continuar.</p>
+                <button class="primary-button" id="recommendButton" type="button">Revelar minha indicação <span aria-hidden="true">→</span></button>
             </div>
-
         </section>
 
-
-        <!-- SOBRE -->
-        <section class="about" id="sobre">
-
-            <p class="tag">SOBRE O CINEMATCH</p>
-
-            <h2>
-                Menos tempo escolhendo.<br>
-                Mais tempo assistindo.
-            </h2>
-
-            <p>
-                O CineMatch foi criado para acabar com aquela dúvida clássica:
-                <strong>“O que eu vou assistir hoje?”</strong>
-                Você escolhe suas preferências e recebe uma sugestão
-                pensada para combinar com o que procura.
-            </p>
-
+        <section class="result section-shell" id="resultado" aria-labelledby="resultTitle" aria-live="polite">
+            <div class="result-poster" id="resultPoster" aria-label="Pôster da recomendação">
+                <div class="poster-placeholder"><span aria-hidden="true">✦</span><small>SUA INDICAÇÃO</small></div>
+            </div>
+            <div class="result-copy">
+                <p class="eyebrow"><span></span> SUA PRÓXIMA SESSÃO</p>
+                <div class="result-meta"><span id="resultType">AGUARDANDO</span><span>•</span><span id="resultYear">—</span><span>•</span><span>★ <b id="resultRating">—</b></span></div>
+                <h2 id="resultTitle">A escolha perfeita<br><em>vai aparecer aqui.</em></h2>
+                <div class="result-tags"><span id="resultGenre">Escolha um gênero</span></div>
+                <p class="result-description" id="resultDescription">Defina suas preferências acima e deixe o CineMatch encontrar uma história para o seu momento.</p>
+                <div class="why-box"><span class="why-icon" aria-hidden="true">✦</span><div><strong>Por que esta indicação?</strong><p id="resultWhy">A recomendação será explicada aqui.</p></div></div>
+                <button class="secondary-button" id="againButton" type="button" disabled>Sortear outra indicação <span aria-hidden="true">↻</span></button>
+            </div>
         </section>
 
+        <section class="about section-shell" id="sobre">
+            <p class="eyebrow"><span></span> SOBRE O CINEMATCH</p>
+            <h2>Menos tempo escolhendo.<br><em>Mais tempo vivendo a história.</em></h2>
+            <p>O CineMatch nasceu para transformar a dúvida “o que eu assisto hoje?” em uma descoberta. Você escolhe o clima, nós encontramos o título.</p>
+        </section>
     </main>
 
-
-    <footer>
-        <div class="logo">🎬 Cine<span>Match</span></div>
-        <p>Encontre sua próxima história.</p>
-    </footer>
-
-
+    <footer class="footer"><a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true">✦</span> Cine<span class="brand-accent">Match</span></a><span>Encontre a sua próxima história.</span><span>© 2026</span></footer>
     <script src="script.js"></script>
-
 </body>
 </html>
